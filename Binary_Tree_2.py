@@ -15,12 +15,18 @@ class aBST:
                 node=self.Tree[i]
                 if key>node:
                     i=2*i+2
+                    if i>len(self.Tree):
+                        return None
+                    elif self.Tree[i]==None:
+                        return -i
                 elif key<node:
                     i=2*i+1
+                    if i>len(self.Tree):
+                        return None
+                    elif self.Tree[i]==None:
+                        return -i
                 else:
-                    return i
-                if i>len(self.Tree):
-                    return None                    
+                    return i                  
         else:
             return None # не найден
 	
@@ -49,13 +55,19 @@ class aBST:
         return -1
         # индекс добавленного/существующего ключа или -1 если не удалось
 """
-A=aBST(2)
+A=aBST(3)
 print(A.AddKey(24))
 print(A.AddKey(25))
 print(A.AddKey(26))
-print(A.AddKey(27))
-print(A.AddKey(26))
-print(A.Tree)
+print(A.AddKey(34))
+print(A.AddKey(11))
+
 print(A.FindKeyIndex(245))
-print(A.AddKey(226))
+#print(A.AddKey(14))
+print(A.AddKey(7))
+print(A.AddKey(9))
+print(A.Tree)
+print(A.FindKeyIndex(7))
+print(A.FindKeyIndex(3))
+print(A.FindKeyIndex(13))
 """
