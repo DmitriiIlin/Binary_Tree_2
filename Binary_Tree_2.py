@@ -40,7 +40,7 @@ class aBST:
                 if i>len(self.Tree):
                     return -1
             else:
-                return -1
+                return i
             if self.Tree[i]==None:
                 self.Tree[i]=key
                 return i
